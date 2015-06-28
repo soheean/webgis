@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>属性查询图形</title>
+    <style type="text/css">
+        @import "http://serverapi.arcgisonline.com/jsapi/arcgis/1.5/js/dojo/dijit/themes/tundra/tundra.css";
+        @import "Layout.css"
+    </style>
+    <script type="text/javascript">djConfig={parseOnLoad:true}</script>
+    <script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=1.5"></script>
+    <script type="text/javascript" src="Find.js"></script>
+</head>
+<body class="tundra">
+    <div id="mainWindow" dojotype="dijit.layout.BorderContainer" design="headline" gutters="false" style="width:100%; height:100%;">
+      <!--标题区域-->
+      <div id="header" dojotype="dijit.layout.ContentPane" region="top" style="height:50px;">
+          属性查询图形
+      </div>
+      
+      <!--中间地图区域-->
+      <div id="mapDiv" dojotype="dijit.layout.ContentPane" region="center" style="margin:5px;">
+      </div>
+
+      <!--右边为属性查询与结果显示区域-->
+      <div dojotype="dijit.layout.ContentPane" region="right" style="width:35%;margin:5px;background-color:whitesmoke;">     
+        输入查询文本<input id="searchText" value="KS" type="text" /><input id="Button1" type="button" 
+            value="查 找" onclick="execute(dojo.byId('searchText').value);" />
+        <div id="contentsContainer">          
+        </div>
+      </div>        
+    </div>
+</body>
+</html>

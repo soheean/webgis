@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+      @import "http://serverapi.arcgisonline.com/jsapi/arcgis/1.5/js/dojo/dijit/themes/tundra/tundra.css";
+    </style>
+    
+    <script type="text/javascript">djConfig = { parseOnLoad:true }</script>
+    <script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=1.5"></script>
+    <script type="text/javascript" src="Query.js"></script>
+</head>
+<body class="tundra">
+    <button onclick="tb.activate(esri.toolbars.Draw.POINT);">点</button>
+    <button onclick="tb.activate(esri.toolbars.Draw.POLYLINE);">线</button>
+    <button onclick="tb.activate(esri.toolbars.Draw.POLYGON);">多边形</button>
+    <button onclick="tb.deactivate()">取消查询</button>
+    
+    <select id="task">
+        <option value="statesTask">州图层</option>
+        <option value="riversTask">河流图层</option>
+        <option value="citiesTask">城市图层</option>
+    </select>   
+    
+    <div id="mapDiv" style="width:900px; height:600px; border:1px solid #000;"></div>
+</body>
+</html>

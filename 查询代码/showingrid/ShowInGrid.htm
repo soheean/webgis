@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+      @import "http://serverapi.arcgisonline.com/jsapi/arcgis/1.5/js/dojo/dijit/themes/tundra/tundra.css";
+      @import "http://serverapi.arcgisonline.com/jsapi/arcgis/1.5/js/dojo/dojox/grid/resources/Grid.css";
+      @import "http://serverapi.arcgisonline.com/jsapi/arcgis/1.5/js/dojo/dojox/grid/resources/tundraGrid.css";
+      @import "Main.css"
+    </style>
+    
+    <script type="text/javascript">djConfig = { parseOnLoad:true }</script>
+    <script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=1.5"></script>
+    <script type="text/javascript" src="ShowInGrid.js"></script>
+</head>
+<body class="tundra">
+    <div id="buttonbox">
+        <button onclick="tb.activate(esri.toolbars.Draw.POLYGON);">多边形</button>
+        <button onclick="tb.activate(esri.toolbars.Draw.FREEHAND_POLYGON);">徒手多边形</button>
+        <button onclick="remove()">删除选择结果</button>
+    </div>
+    
+    <div id="box">
+        <div>多边形内的街区数为：<span id="numberOfBlocks">0</span></div>
+        <div>多边形内的人口数为：<span id="totalPopulation">0</span></div>
+    </div>    
+
+    <div id="mapbox">
+        <div id="map" style="width:700px; height:512px; border:2px solid #000;" class="tundra"></div>
+    </div>
+    
+    <div id="grid" dojoType="dojox.grid.DataGrid" jsId="gridWidget" structure="layout"></div>
+
+    <div id="legend">
+        <b>人口：  </b>
+        <img src="images/CircleBlue16.png" /> 50
+        <img src="images/CircleBlue24.png" /> 100
+        <img src="images/CircleRed32.png" /> 大于100
+    </div>
+</body>
+</html>
